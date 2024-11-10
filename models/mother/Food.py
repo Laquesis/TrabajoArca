@@ -55,7 +55,14 @@ class Food:
         except TypeError as e:
             print(f"Error al crear el alimento: {e}")
 
-    def eliminar_caducados(self):
+    def eliminar_caducados(self):   
+        # Restar 1 a la caducidad de cada alimento en self.Ark.foods
+        for food in self.Ark.foods:
+            food.caducidad -= 1
+
+        # Eliminar los alimentos cuya caducidad es 0 dentro de self.Ark.foods
+        self.Ark.foods = [food for food in self.Ark.foods if food.caducidad > 0]
+
 
 
 
