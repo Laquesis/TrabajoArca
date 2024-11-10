@@ -64,7 +64,8 @@ class Food:
         self.Ark.foods = [food for food in self.Ark.foods if food.caducidad > 0]
 
 
-
+    def print_food(self):
+        print(self.name , self.tipo , self.calorias , self.caducidad)
 
    
                 
