@@ -178,6 +178,15 @@ class Ark:
             Ark.eliminar_caducados()
             self.tiempo=0      
   
-    def beber(self,animal):
-        if Animal(animal).thirst==True and self.water > 0:
+    def dar_agua(self,animal):
+        if Animal(animal).thirst==True and self.water >(Animal(animal).size):
             self.water-=(Animal(animal).size)
+            Animal(animal).thirst==False
+        else:
+            self.water=0
+            Animal(animal).thirst=True
+            Animal(animal).life-=1
+    
+  
+    
+
