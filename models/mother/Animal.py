@@ -1,3 +1,4 @@
+
 class Animal:
     def __init__(self, name, hunger , thirst, type = None ) :
         self.name = name
