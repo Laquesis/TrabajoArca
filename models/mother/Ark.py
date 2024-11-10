@@ -1,7 +1,5 @@
 from mother.Animal import Animal
 from mother.Food import Food
-from mother import Ark
-
 class Ark:
     def __init__(self, animals=None, foods=None, water=None, max_capacity=None, left=False, tiempo=None):
         try:
@@ -39,7 +37,7 @@ class Ark:
 
             # Asignación a los atributos de la clase
             self.animals = animals
-            self.food = foods
+            self.foods = foods
             self.water = water
             self.max_capacity = max_capacity
             self.left = left
@@ -72,8 +70,8 @@ class Ark:
     def add_food(self, food):
         """Agregar comida si hay capacidad disponible."""
         try:
-            if len(self.food) < self.max_capacity["food"]:
-                self.food.append(Food(food))
+            if len(self.foods) < self.max_capacity["food"]:
+                self.foods.append(Food(food))
             else:
                 print("No se puede añadir más comida.")
         except KeyError as e:
@@ -127,58 +125,59 @@ class Ark:
         """Mostrar el estado actual de la capacidad."""
         return {
             "animals": len(self.animals),
-            "food": len(self.food),
+            "food": len(self.foods),
             "water": self.water,
             "max_capacity": self.max_capacity,
             "left": self.left
         }
 
-    def search_list_suitable_food(self, foods, animal_type):
-        list_suitable_foods = []
-        try:
-            if not isinstance(foods, list):
-                raise TypeError("El parámetro 'foods' debe ser una lista.")
-            if not isinstance(animal_type, int):
-                raise TypeError("El parámetro 'animal_type' debe ser un número entero.")
+    def search_list_suitable_food(food, animal_type):
+        if not isinstance(food, Food):
+            raise TypeError("El parámetro 'food' debe ser de la clase Food.")
 
-            for e in foods:
-                if not isinstance(e, Food):
-                    raise TypeError("Todos los elementos en 'foods' deben ser instancias de la clase Food.")
-                
-                # herbívoro = 0, carnívoro = 1, omnívoro = 2
-                match animal_type:
-                    case 0:
-                        if e.tipo == 0:
-                            list_suitable_foods.append(Food(e))
-                    case 1:
-                        if e.tipo == 1:
-                            list_suitable_foods.append(Food(e))
-                    case 2:
-                        list_suitable_foods.append(Food(e))
-                    case _:
-                        print("Tipo de animal desconocido.")
-        except TypeError as e:
-            print(f"Error en search_list_suitable_food: {e}")
+        # Diccionario que asigna funciones lambda de validación según el tipo de animal
+        is_suitable = {
+            0: lambda f: f.tipo == 0,    # Herbívoro: solo acepta vegetal (tipo 0)
+            1: lambda f: f.tipo == 1,    # Carnívoro: solo acepta carne (tipo 1)
+            2: lambda _: True            # Omnívoro: acepta cualquier tipo de alimento
+        }
 
-        return list_suitable_foods
-    
-    def alimentar(self):
-        Ark.search_list_suitable_food()
+        # Retorna True o False según si el alimento es adecuado
+        return is_suitable.get(animal_type, lambda _: False)(food)
+        
+    def alimentar(self,animal):    
+        if not animal.hunger:
+            return self.foods  # Si el animal no tiene hambre, no consume nada
+        if len(self.foods)<=0: # La lista no puede estar vacía           
+            return self.foods
 
+        calorias_necesarias = animal.size
+        suitable_foods = [food for food in self.foods if Ark.search_list_suitable_food(food,Animal(animal).tipo)]
+
+        for food in suitable_foods:
+            if calorias_necesarias <= 0:
+                break  # Se ha satisfecho la necesidad calórica
+            if food.calorias <= calorias_necesarias:
+                # Consume todo el alimento y resta sus calorías de la necesidad
+                calorias_necesarias -= food.calorias
+                self.foods.remove(food)
+            else:
+                # Consume solo una parte de las calorías del alimento y actualiza el alimento
+                food.calorias -= calorias_necesarias
+                calorias_necesarias = 0  # Se satisface la necesidad calórica
+        
+        if calorias_necesarias > 0:
+            Animal(animal).hunger=True
+            Animal(animal).life-=1
+        else:
+            Animal(animal).hunger=False
+        
         self.tiempo+=1
 
         if self.tiempo==5:
             Ark.eliminar_caducados()
-            self.tiempo=0
-    
-
-
-    def eliminar_caducados(self):
-        lista_nueva=[]
-        for e in self.food:
-            Food(e).caducidad -=1
-            if Food(e).caducidad!=0:
-                lista_nueva.append(Food(e))
-            else:
-
-        
+            self.tiempo=0      
+  
+    def beber(self,animal):
+        if Animal(animal).thirst==True and self.water > 0:
+            self.water-=(Animal(animal).size)
