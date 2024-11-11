@@ -1,6 +1,7 @@
 import random
 import threading
 import time
+
 class Animal:
     def __init__(self, name, animal_type=0, hunger=False, thirst=False, size=1, sentiment=0, sex=None):
         # Validate type
