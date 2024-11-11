@@ -175,7 +175,7 @@ class Ark:
         self.tiempo+=1
 
         if self.tiempo==5:
-            Ark.eliminar_caducados()
+            Food.eliminar_caducados()
             self.tiempo=0      
   
     def dar_agua(self,animal):
