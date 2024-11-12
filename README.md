@@ -73,17 +73,17 @@ En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizand
 
 Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instancia.
 
-#### ENLACES DEL PROYECTO
-# CLICK UP
+# ENLACES DEL PROYECTO
+## CLICK UP
 https://app.clickup.com/t/8696kpmqq
 
-# Repositorios
+## Repositorios
 # Principal
 https://github.com/Laquesis/TrabajoArca
 # Django
 https://github.com/Laquesis/djangoArcaNoe
 
-# Diagrama de clases
+## Diagrama de clases
 https://miro.com/welcomeonboard/MzR4SDRIVEhXYTBQWHZPOTJDZWNNY0pyRXNvOHhXb1BqNTB6YVFRQ1VFSGtWSU1vd0JHRnNwc2Q1enlkOTBOQlFOQW4vRGZ3ZnBiNmJHRmtxNWlHTjBQa3JFajV1d0lmbDM1WGhncGN6Zmg3TktoN21SL2lsNkQ3ZFhOSzdxUEshZQ==?share_link_id=706057329282
 
 
