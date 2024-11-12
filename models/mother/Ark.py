@@ -45,10 +45,8 @@ class Ark:
         except TypeError as e:
             print(f"Error en la inicialización de Ark: {e}")
 
-    def left_ark(self, left):
-        try:
-            if not isinstance(left, bool):
-                raise TypeError("El parámetro 'left' debe ser un valor booleano.")
+    def left_ark(self):
+        try:            
             if self.left==False:
                 self.left=True
                 self.tiempo +=1         
@@ -168,7 +166,7 @@ class Ark:
         
         if calorias_necesarias > 0:
             Animal(animal).hunger=True
-            Animal(animal).life-=1
+            Animal(animal).is_alive=False          
         else:
             Animal(animal).hunger=False
         
@@ -181,12 +179,10 @@ class Ark:
     def dar_agua(self,animal):
         if Animal(animal).thirst==True and self.water >(Animal(animal).size):
             self.water-=(Animal(animal).size)
-            Animal(animal).thirst==False
+            Animal(animal).thirst==False       
         else:
             self.water=0
             Animal(animal).thirst=True
-            Animal(animal).life-=1
+            Animal(animal).is_alive=False
     
   
-    
-
