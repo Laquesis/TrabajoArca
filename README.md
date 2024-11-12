@@ -2,7 +2,7 @@
 # Razieh GHAHARTARS
 # Carmen RAMÍREZ
 ## Desafío: Creando el Arca de Noé con Clases de Python
-
+## ENUNCIADO 
 En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizando programación orientada a objetos en Python. Crearemos una clase estática `Arca` que tendrá la capacidad de almacenar tanto animales como alimentos y agua. La arca tendrá contenedores específicos y finitos, y proporcionará métodos para gestionar los alimentos y cuidar de los animales, incluyendo alimentarlos y darles agua. 
 
 ### Parte 1: Crear la Clase Arca
@@ -71,4 +71,23 @@ En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizand
 
 13. Crea un método para mostrar el estado de todos los animales en el arca, incluyendo su nombre, tipo, hambre y sed.
 
-Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instanci
+Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instancia.
+
+#### ENLACES DEL PROYECTO
+# CLICK UP
+https://app.clickup.com/t/8696kpmqq
+
+# Repositorios
+# Principal
+https://github.com/Laquesis/TrabajoArca
+# Django
+https://github.com/Laquesis/djangoArcaNoe
+
+# Diagrama de clases
+https://miro.com/welcomeonboard/MzR4SDRIVEhXYTBQWHZPOTJDZWNNY0pyRXNvOHhXb1BqNTB6YVFRQ1VFSGtWSU1vd0JHRnNwc2Q1enlkOTBOQlFOQW4vRGZ3ZnBiNmJHRmtxNWlHTjBQa3JFajV1d0lmbDM1WGhncGN6Zmg3TktoN21SL2lsNkQ3ZFhOSzdxUEshZQ==?share_link_id=706057329282
+
+
+
+
+
+
