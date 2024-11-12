@@ -1,6 +1,6 @@
 import random
 import threading
-import time
+
 
 class Animal:
     def __init__(self, name, animal_type=0, hunger=False, thirst=False, size=1, sentiment=0, sex=None):
@@ -46,11 +46,10 @@ class Animal:
             self.sex = sex
         else:
             raise ValueError("Sex must be 0 (male) or 1 (female)")
+        self.slept = False
 
         self.is_alive = True
-        threading.Timer(30, self.set_hunger).start()
-        threading.Timer(30, self.set_thirst).start()
-        threading.Timer(120, self.death).start()
+      
 
     def __str__(self):
         # Provide string representation of the Animal object
@@ -82,31 +81,38 @@ class Animal:
         
     def set_hunger(self):
         self.hunger = True
-        print(f"{self.name} is hungry again")
+        print(f"{self.name} is hungry.\n")
 
 
     def set_thirst(self):
         self.thirst = True
-        print(f"{self.name} is thirsty again")
+        print(f"{self.name} is thirsty.\n")
 
 
     def set_sentimient(self, sentiment):
         if sentiment in range(6):
-            self.sentiment = sentiment  # 0: neutral, 1: happy, 2: sad, 3: angry, 4: in-love, 5: sleepy
+            self.sentiment = sentiment  # 0: neutral, 1: happy, 2: sad, 3: angry, 4: in-love, 5: sleepy, 6: Afraid　, 7: Territoriality , 8: Playful
         else:
-            raise ValueError("Please enter a valid sentiment: 0 for neutral, 1 for happy, 2 for sad, 3 for angry, 4 for in-love, 5 for sleepy")
+            raise ValueError("Please enter a valid sentiment: 0 for Neutral, 1 for Happy, 2 for Sad, 3 for Angry,\n4 for In-love, 5 for Sleepy, 6 Afriad, 7 Territoriality, 8 Playful")
         
-
+    
+    def get_calm(self):
+        self.sentiment = 0
+        print(f"{self.name} has calmed down.\n")
+    
+    def territorial_response(self):
+        self.sentiment = 6
+   
     def death(self):
         self.is_alive = False
 
     
     def get_sentiment(self):
         if not self.is_alive:
-            print(f"{self.name} is death")
+            print(f"{self.name} is death.\n")
             return None
         # Translate sentiment code to text
-        sentiments = ["Neutral", "Happy", "Sad", "Angry", "In-Love", "Sleepy"]
+        sentiments = ["Neutral", "Happy", "Sad", "Angry", "In-Love", "Sleepy" ,"Afraid", "Territoriality" , "Playful" ]
         return sentiments[self.sentiment]
 
     def is_hungry(self):
@@ -129,6 +135,9 @@ class Animal:
         threading.Timer(5, self.set_hunger).start()
 
     def water(self):
+        if self.is_alive == False:
+            print(f"{self.name} is death.")
+            return
         if self.thirst:
             self.thirst = False
             print(f"{self.name} has been given water.")
@@ -136,20 +145,64 @@ class Animal:
             print(f"{self.name} is not thirsty.")
         threading.Timer(5 , self.set_thirst).start()
 
-
-# Instantiate and print an animal object
-animal = Animal(name="Horse", animal_type=0)
-
-
-
-print(animal.is_hungry())
-print(animal.is_thirsty())
-
-
-animal.feed()
+    
+    def set_sleep(self):
+        if self.is_alive == False:
+            print(f"{self.name} is death.")
+            return
+        self.slept = True
+        print(f"{self.name} is slept.")
+        return
 
 
-time.sleep(10)
+    def set_awake(self):
+        if self.is_alive == False:
+            print(f"{self.name} is death.")
+            return
+        self.selpt = False
+        print(f"{self.name} is awake.")
+        return
+        
 
-print(animal.is_hungry())
-print(animal.is_thirsty())
+    def instinctive_reaction(self,animal):
+        if not self.is_alive:
+            print(f"{self.name} is dead and cannot react.")
+            return
+        if self.animal_type == 0:  # Herbivore
+            if animal.animal_type in [1, 2]:  # Carnivore or Omnivore
+                self.sentiment = 6  # Afraid
+                animal.sentiment = 3  # Angry
+            elif animal.animal_type == 0:
+                self.sentiment = 8  # Playful
+                animal.sentiment = 8 # Playful
+        elif self.animal_type == 1:  # Carnivore
+            if animal.animal_type == 2:
+                self.sentiment = 7  # Territoriality
+                animal.sentiment = 7 # Territoriality
+            elif animal.animal_type == 0:
+                self.sentiment = 3  # Angry
+                animal.sentiment = 3 # Angry
+            elif animal.animal_type == 1:
+                self.sentiment = 7  # Territoriality
+                animal.sentiment = 7 # Territoriality
+        elif self.animal_type == 2:  # Omnivore
+            if animal.animal_type == 0:
+                self.sentiment = 3 # Angry
+                animal.sentiment = 6 # Afraid
+            elif animal.animal_type == 1:
+                self.sentiment = 7  # Territoriality
+                animal.sentiment = 7 # Territoriality
+            elif animal.animal_type == 2:
+                self.sentiment = 7  # Territoriality
+                animal.sentiment = 7 # Territoriality
+        
+        threading.Timer(30, self.get_calm).start()
+        threading.Timer(30, animal.get_calm).start()
+
+        # Print reactions for clarity if needed
+        print(f"{self.name}'s reaction: {self.get_sentiment()}")
+        print(f"{animal.name}'s reaction: {animal.get_sentiment()}")
+    
+
+
+
