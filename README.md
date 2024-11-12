@@ -78,9 +78,9 @@ Este ejercicio te ayudará a comprender cómo usar la programación orientada a 
 https://app.clickup.com/t/8696kpmqq
 
 ## Repositorios
-# Principal
+### Principal
 https://github.com/Laquesis/TrabajoArca
-# Django
+### Django
 https://github.com/Laquesis/djangoArcaNoe
 
 ## Diagrama de clases
