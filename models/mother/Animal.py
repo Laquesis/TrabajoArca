@@ -15,17 +15,20 @@ class Animal:
             self.name = name
         else:
             raise ValueError("Name must be a string")
+        
 
         # Set hunger and thirst as booleans
         if isinstance(hunger, bool):
             self.hunger = hunger
         else:
             raise ValueError("Hunger must be a boolean value")
+        
 
         if isinstance(thirst, bool):
             self.thirst = thirst
         else:
             raise ValueError("Thirst must be a boolean value")
+
 
         # Validate size
         if isinstance(size, int) and size > 0:
@@ -33,11 +36,13 @@ class Animal:
         else:
             raise ValueError("The animal size must be a positive integer")
 
+
         # Validate sentiment
         if sentiment in range(9):
             self.sentiment = sentiment  # 0: neutral, 1: happy, 2: sad, 3: angry, 4: in-love, 5: sleepy, 6: Afraid　, 7: Territoriality , 8: Playful
         else:
             raise ValueError("Please enter a valid sentiment: 0 for Neutral, 1 for Happy, 2 for Sad, 3 for Angry,\n4 for In-love, 5 for Sleepy, 6 Afriad, 7 Territoriality, 8 Playful")
+
 
         # Set sex
         if sex is None:
@@ -48,10 +53,12 @@ class Animal:
             raise ValueError("Sex must be 0 (male) or 1 (female)")
         self.slept = False
 
+
         self.is_alive = True
         threading.Timer(30, self.set_hunger).start()
         threading.Timer(30, self.set_thirst).start()
         threading.Timer(120, self.death).start()
+
 
     def __str__(self):
         # Provide string representation of the Animal object
@@ -102,9 +109,11 @@ class Animal:
         self.sentiment = 0
         print(f"{self.name} has calmed down.\n")
     
+
     def territorial_response(self):
         self.sentiment = 6
    
+
     def death(self):
         self.is_alive = False
 
@@ -116,6 +125,7 @@ class Animal:
         # Translate sentiment code to text
         sentiments = ["Neutral", "Happy", "Sad", "Angry", "In-Love", "Sleepy" ,"Afraid", "Territoriality" , "Playful" ]
         return sentiments[self.sentiment]
+
 
     def is_hungry(self):
          if not self.is_alive:
@@ -182,3 +192,11 @@ class Animal:
             elif animal.animal_type == 2:
                 self.sentiment = 7  # Territoriality
                 animal.sentiment = 7  # Territoriality
+
+                
+    def have_a_baby(self , animal):
+        if (self.name == animal.name) and (self. sex != animal.sex) :
+            baby_animal = Animal(self.name , animal_type= self.animal_type , sex = random.randint(0,1), hunger= True , thirst= True)
+            return baby_animal
+
+
