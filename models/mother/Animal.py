@@ -34,10 +34,10 @@ class Animal:
             raise ValueError("The animal size must be a positive integer")
 
         # Validate sentiment
-        if sentiment in range(6):
-            self.sentiment = sentiment  # 0: neutral, 1: happy, 2: sad, 3: angry, 4: in-love, 5: sleepy
+        if sentiment in range(9):
+            self.sentiment = sentiment  # 0: neutral, 1: happy, 2: sad, 3: angry, 4: in-love, 5: sleepy, 6: Afraid　, 7: Territoriality , 8: Playful
         else:
-            raise ValueError("Please enter a valid sentiment: 0 for neutral, 1 for happy, 2 for sad, 3 for angry, 4 for in-love, 5 for sleepy")
+            raise ValueError("Please enter a valid sentiment: 0 for Neutral, 1 for Happy, 2 for Sad, 3 for Angry,\n4 for In-love, 5 for Sleepy, 6 Afriad, 7 Territoriality, 8 Playful")
 
         # Set sex
         if sex is None:
@@ -118,7 +118,7 @@ class Animal:
         return sentiments[self.sentiment]
 
     def is_hungry(self):
-         if not animal.is_alive:
+         if not self.is_alive:
              print("this animal is death, It is not hungry")
              return False
          return(f"{self.name} is not hungry" if self.hunger == False else f"{self.name} is hungry" )
@@ -147,20 +147,38 @@ class Animal:
             print(f"{self.name} is not thirsty.")
         threading.Timer(5 , self.set_thirst).start()
 
+def instinctive_reaction(self, animal):
+    if not self.is_alive:
+        print(f"{self.name} is dead and cannot react.")
+        return
 
-# Instantiate and print an animal object
-animal = Animal(name="Horse", animal_type=0)
+    # Set reactions based on animal type
+    if self.animal_type == 0:  # Herbivore
+        if animal.animal_type in [1, 2]:  # Carnivore or Omnivore
+            self.sentiment = 6  # Afraid
+            animal.sentiment = 3  # Angry
+        elif animal.animal_type == 0:
+            self.sentiment = 8  # Playful
+            animal.sentiment = 8  # Playful
 
+    elif self.animal_type == 1:  # Carnivore
+        if animal.animal_type == 2:
+            self.sentiment = 7  # Territoriality
+            animal.sentiment = 7  # Territoriality
+        elif animal.animal_type == 0:
+            self.sentiment = 3  # Angry
+            animal.sentiment = 6  # Afraid
+        elif animal.animal_type == 1:
+            self.sentiment = 7  # Territoriality
+            animal.sentiment = 7  # Territoriality
 
-
-print(animal.is_hungry())
-print(animal.is_thirsty())
-
-
-animal.feed()
-
-
-time.sleep(10)
-
-print(animal.is_hungry())
-print(animal.is_thirsty())
+    elif self.animal_type == 2:  # Omnivore
+        if animal.animal_type == 0:
+            self.sentiment = 3  # Angry
+            animal.sentiment = 6  # Afraid
+        elif animal.animal_type == 1:
+            self.sentiment = 7  # Territoriality
+            animal.sentiment = 7  # Territoriality
+        elif animal.animal_type == 2:
+            self.sentiment = 7  # Territoriality
+            animal.sentiment = 7  # Territoriality

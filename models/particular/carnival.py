@@ -1,12 +1,13 @@
-from mother.Animal import Animal
+from ..mother.Animal import Animal
 from particular.meat import Meat
 from mother.Food import Food
+
 class Carnival(Animal):
     def __init__(self , name : str, hunger : bool , thirst : bool, type=1):
         self.name = name
         self.hunger = hunger
         self.thirst = thirst
-        self.type = type
+        self.type = type 
         self._meat_portion_per_meal = 10
         self._water_per_drink = 0.5
     def feed(self, food : Food):
@@ -22,8 +23,5 @@ class Carnival(Animal):
         else:
             self.set_hunger(False)
             animal.is_alive = False
-lion = Carnival(name="Lion" , hunger= True)
-rabit = Animal(name="Rabit" , type=0)
-lion.cazar(rabit)
 
 
