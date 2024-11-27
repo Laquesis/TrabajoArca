@@ -73,7 +73,7 @@ En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizand
 
 Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instancia.
 # EXPLICACIÓN DEL PROYECTO
-![]()
+![ARCA NOE](arcanoe.jpeg)
 
 
 # ENLACES DEL PROYECTO
