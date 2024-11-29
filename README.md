@@ -514,6 +514,8 @@ Sex: Male
 Feeling: Playful
 Is Hungry: No
 Is Thirsty: No
+
+
 id: Vso2
 Name: Omnivore1
 Type: Omnivore
@@ -522,6 +524,8 @@ Sex: Male
 Feeling: Territoriality
 Is Hungry: No
 Is Thirsty: No
+
+
 id: kYuG
 Name: Herbivore2
 Type: Herbivore
@@ -530,6 +534,8 @@ Sex: Male
 Feeling: Sleepy
 Is Hungry: No
 Is Thirsty: No
+
+
 id: j4fM
 Name: Omnivore3
 Type: Omnivore
@@ -538,6 +544,8 @@ Sex: Female
 Feeling: Happy
 Is Hungry: No
 Is Thirsty: No
+
+
 id: uikX
 Name: Herbivore5
 Type: Herbivore
@@ -546,6 +554,8 @@ Sex: Male
 Feeling: Happy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: ioBU
 Name: Carnivore7
 Type: Carnivore
@@ -554,6 +564,8 @@ Sex: Male
 Feeling: Angry
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: WviR
 Name: Omnivore9
 Type: Omnivore
@@ -562,6 +574,8 @@ Sex: Male
 Feeling: Sleepy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: kfQe
 Name: Herbivore11
 Type: Herbivore
@@ -570,6 +584,8 @@ Sex: Male
 Feeling: Sad
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: wf5o
 Name: Herbivore13
 Type: Herbivore
@@ -578,6 +594,8 @@ Sex: Male
 Feeling: Playful
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: 6spE
 Name: Carnivore15
 Type: Carnivore
@@ -586,6 +604,8 @@ Sex: Female
 Feeling: In-Love
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: hx4K
 Name: Omnivore17
 Type: Omnivore
@@ -594,6 +614,8 @@ Sex: Male
 Feeling: Sleepy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: t3MM
 Name: Omnivore19
 Type: Omnivore
@@ -602,6 +624,8 @@ Sex: Male
 Feeling: Afraid
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: 2ZNp
 Name: Herbivore21
 Type: Herbivore
@@ -610,6 +634,8 @@ Sex: Female
 Feeling: Happy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: YKhT
 Name: Omnivore23
 Type: Omnivore
@@ -618,6 +644,8 @@ Sex: Female
 Feeling: Angry
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: 9B8o
 Name: Carnivore25
 Type: Carnivore
@@ -626,6 +654,8 @@ Sex: Female
 Feeling: Playful
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: Hgwv
 Name: Omnivore27
 Type: Omnivore
@@ -634,6 +664,8 @@ Sex: Male
 Feeling: In-Love
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: wos7
 Name: Herbivore29
 Type: Herbivore
@@ -642,6 +674,8 @@ Sex: Male
 Feeling: Sleepy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: We8d
 Name: Carnivore31
 Type: Carnivore
@@ -650,6 +684,8 @@ Sex: Female
 Feeling: Happy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: iFLh
 Name: Herbivore33
 Type: Herbivore
@@ -658,6 +694,8 @@ Sex: Male
 Feeling: Sad
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: MCUB
 Name: Herbivore35
 Type: Herbivore
@@ -666,6 +704,8 @@ Sex: Female
 Feeling: Playful
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: 4svu
 Name: Omnivore37
 Type: Omnivore
@@ -674,6 +714,8 @@ Sex: Female
 Feeling: Playful
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: yShJ
 Name: Carnivore39
 Type: Carnivore
@@ -682,6 +724,8 @@ Sex: Female
 Feeling: Playful
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: EQFe
 Name: Carnivore41
 Type: Carnivore
@@ -690,6 +734,8 @@ Sex: Female
 Feeling: Happy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: tFnA
 Name: Carnivore43
 Type: Carnivore
@@ -698,6 +744,8 @@ Sex: Female
 Feeling: Sleepy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: Gxib
 Name: Carnivore45
 Type: Carnivore
@@ -706,6 +754,8 @@ Sex: Male
 Feeling: Sleepy
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: hUzc
 Name: Omnivore47
 Type: Omnivore
@@ -714,6 +764,8 @@ Sex: Male
 Feeling: Afraid
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 id: Ryo5
 Name: Omnivore49
 Type: Omnivore
