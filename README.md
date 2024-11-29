@@ -720,20 +720,28 @@ Sex: Male
 Feeling: Angry
 Is Hungry: Yes
 Is Thirsty: Yes
+
+
 === FIN ===
+
 .=== TEST 2 ===
+
 === INICIO DE LA SIMULACIÓN DEL ARCA ===
 
 --- Añadiendo Animales al Arca ---
+
 Animales actuales en el arca: 3
 
 --- Añadiendo Alimentos al Arca ---
+
 Cantidad actual de comida en el arca: 2
 
 --- Añadiendo Agua al Arca ---
+
 Cantidad actual de agua en el arca: 500
 
 --- Alimentando a los Animales ---
+
 Deer is not hungry.
 
 Deer se ha alimentado.
