@@ -110,196 +110,13 @@ El resultado es una simulacion de como los animales van teniendo hambre y van co
 ##### Fragmento salida por consola
 ...
 
-=== Ciclo 2406 ===
+
 Animales en el arca: 50
 
-Comida restante en el arca: 100
-
-Agua restante en el arca: 68
-
-Herbivore0 is not hungry.
-
-Herbivore0 se ha alimentado.
-
-Herbivore0 no tiene sed
-
-Omnivore1 no tiene sed
-Herbivore2 no tiene sed
-Omnivore3 no tiene sed
-Herbivore4 no tiene sed
-Herbivore5 no tiene sed
-Omnivore6 no tiene sed
-Carnivore7 no tiene sed
-Carnivore8 no tiene sed
-Omnivore9 no tiene sed
-Carnivore10 no tiene sed
-Herbivore11 no tiene sed
-Carnivore12 no tiene sed
-Herbivore13 no tiene sed
-Carnivore14 no tiene sed
-Carnivore15 no tiene sed
-Herbivore16 no tiene sed
-Omnivore17 no tiene sed
-Carnivore18 no tiene sed
-Omnivore19 no tiene sed
-Omnivore20 no tiene sed
-Herbivore21 no tiene sed
-Carnivore22 no tiene sed
-Omnivore23 no tiene sed
-Carnivore24 no tiene sed
-Carnivore25 no tiene sed
-Herbivore0 is thirsty.
-Carnivore26 no tiene sed
-
-Omnivore27 no tiene sed
-Herbivore28 no tiene sed
-Herbivore29 no tiene sed
-Omnivore30 no tiene sed
-Carnivore31 no tiene sed
-Carnivore32 no tiene sed
-Herbivore33 no tiene sed
-Herbivore34 no tiene sed
-Herbivore35 no tiene sed
-Herbivore36 no tiene sed
-Omnivore37 no tiene sed
-Omnivore38 no tiene sed
-Carnivore39 no tiene sed
-Omnivore40 no tiene sed
-Carnivore41 no tiene sed
-Herbivore42 no tiene sed
-Carnivore43 no tiene sed
-Herbivore44 no tiene sed
-Carnivore45 no tiene sed
-Carnivore46 no tiene sed
-Omnivore47 no tiene sed
-Herbivore48 no tiene sed
-Omnivore49 no tiene sed
-Animales en el arca: 50
-Comida restante en el arca: 100
-Agua restante en el arca: 68
-=== Ciclo 2407 ===
-Animales en el arca: 50
-Comida restante en el arca: 100
-Agua restante en el arca: 68
-Herbivore0 ha bebido
-Omnivore1 no tiene sed
-Herbivore2 no tiene sed
-Omnivore3 no tiene sed
-Herbivore4 no tiene sed
-Herbivore5 no tiene sed
-Omnivore6 no tiene sed
-Carnivore7 no tiene sed
-Carnivore8 no tiene sed
-Omnivore9 no tiene sed
-Carnivore10 no tiene sed
-Herbivore11 no tiene sed
-Carnivore12 no tiene sed
-Herbivore13 no tiene sed
-Carnivore14 no tiene sed
-Carnivore15 no tiene sed
-Herbivore16 no tiene sed
-Omnivore17 no tiene sed
-Carnivore18 no tiene sed
-Omnivore19 no tiene sed
-Omnivore20 no tiene sed
-Herbivore21 no tiene sed
-Carnivore22 no tiene sed
-Omnivore23 no tiene sed
-Carnivore24 no tiene sed
-Carnivore25 no tiene sed
-Carnivore26 no tiene sed
-Omnivore27 no tiene sed
-Herbivore28 no tiene sed
-Herbivore29 no tiene sed
-Omnivore30 no tiene sed
-Carnivore31 no tiene sed
-Carnivore32 no tiene sed
-Herbivore33 no tiene sed
-Herbivore34 no tiene sed
-Herbivore35 no tiene sed
-Herbivore36 no tiene sed
-Omnivore37 no tiene sed
-Omnivore38 no tiene sed
-Carnivore39 no tiene sed
-Omnivore40 no tiene sed
-Carnivore41 no tiene sed
-Omnivore1 is thirsty.
-
-Herbivore42 no tiene sed
-
-Omnivore1  is hungry.
-
-Carnivore43 no tiene sed
-
-Herbivore44 no tiene sed
-Carnivore45 no tiene sed
-Carnivore46 no tiene sed
-Omnivore47 no tiene sed
-Herbivore48 no tiene sed
-Omnivore49 no tiene sed
-Animales en el arca: 50
-Comida restante en el arca: 100
-Agua restante en el arca: 67
-=== Ciclo 2408 ===
-Animales en el arca: 50
-Comida restante en el arca: 100
-Agua restante en el arca: 67
-Herbivore0 no tiene sed
-Omnivore1 is not hungry.
-
-Omnivore1 se ha alimentado.
-Omnivore1 ha bebido
-Herbivore2 no tiene sed
-Omnivore3 no tiene sed
-Herbivore4 no tiene sed
-Herbivore5 no tiene sed
-Omnivore6 no tiene sed
-Carnivore7 no tiene sed
-Carnivore8 no tiene sed
-Omnivore9 no tiene sed
-Carnivore10 no tiene sed
-Herbivore11 no tiene sed
-Carnivore12 no tiene sed
-Herbivore13 no tiene sed
-Carnivore14 no tiene sed
-Carnivore15 no tiene sed
-Herbivore16 no tiene sed
-Omnivore17 no tiene sed
-Carnivore18 no tiene sed
-Omnivore19 no tiene sed
-Omnivore20 no tiene sed
-Herbivore21 no tiene sed
-Carnivore22 no tiene sed
-Omnivore23 no tiene sed
-Carnivore24 no tiene sed
-Carnivore25 no tiene sed
-Carnivore26 no tiene sed
-Omnivore27 no tiene sed
-Herbivore28 no tiene sed
-Herbivore29 no tiene sed
-Omnivore30 no tiene sed
-Carnivore31 no tiene sed
-Carnivore32 no tiene sed
-Herbivore33 no tiene sed
-Herbivore34 no tiene sed
-Herbivore35 no tiene sed
-Herbivore36 no tiene sed
-Omnivore37 no tiene sed
-Omnivore38 no tiene sed
-Carnivore39 no tiene sed
-Omnivore40 no tiene sed
-Carnivore41 no tiene sed
-Herbivore42 no tiene sed
-Carnivore43 no tiene sed
-Herbivore44 no tiene sed
-Carnivore45 no tiene sed
-Carnivore46 no tiene sed
-Omnivore47 no tiene sed
-Herbivore48 no tiene sed
-Omnivore49 no tiene sed
-Animales en el arca: 50
 Herbivore2  is hungry.
+
 Comida restante en el arca: 100
+
 Herbivore5  is hungry.
 
 Omnivore3 is thirsty.
@@ -332,6 +149,7 @@ Omnivore6  is hungry.
 
 
 Agua restante en el arca: 66
+
 Carnivore14 is thirsty.
 
 
@@ -351,15 +169,19 @@ Carnivore15 is thirsty.
 
 
 Herbivore5 is thirsty.
+
 Animales en el arca: 50
+
 Carnivore8  is hungry.
 
 
 
 Herbivore4 is thirsty.
+
 Comida restante en el arca: 100
 
 Agua restante en el arca: 66
+
 Herbivore28 is thirsty.
 
 Omnivore20 is thirsty.
@@ -387,7 +209,9 @@ Omnivore23  is hungry.
 Carnivore18 is thirsty.
 
 Herbivore0 no tiene sed
+
 Omnivore30  is hungry.
+
 Carnivore22  is hungry.
 
 Carnivore22 is thirsty.
@@ -395,18 +219,25 @@ Carnivore22 is thirsty.
 Herbivore21  is hungry.
 
 Omnivore17 is thirsty.
+
 Carnivore26  is hungry.
+
 Omnivore23 is thirsty.
+
 Herbivore29  is hungry.
 
 Omnivore27  is hungry.
+
 Omnivore27 is thirsty.
+
 Herbivore16  is hungry.
+
 Herbivore29 is thirsty.
 
 Carnivore25 is thirsty.
 
 Carnivore24  is hungry.
+
 Omnivore20  is hungry.
 
 
@@ -419,18 +250,22 @@ Carnivore18  is hungry.
 
 
 Omnivore1 no tiene sed
+
 Omnivore19  is hungry.
 
 Herbivore2 is not hungry.
 
 
 Herbivore44 is thirsty.
+
 Herbivore44  is hungry.
 
 Omnivore38  is hungry.
+
 Omnivore40 is thirsty.
 
 Carnivore39  is hungry.
+
 Herbivore35 is thirsty.
 
 Herbivore35  is hungry.
