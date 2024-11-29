@@ -589,6 +589,7 @@ Carnivore32 is thirsty.
 
 
 Herbivore2 se ha alimentado.
+
 Carnivore31 is thirsty.
 
 Carnivore43  is hungry.
@@ -610,14 +611,20 @@ Herbivore2 ha bebido
 
 100
 Herbivore34  is hungry.
+
 Omnivore3 is not hungry.
 
 
 Omnivore3 se ha alimentado.
+
 Herbivore48 is thirsty.
+
 Herbivore48  is hungry.
+
 Carnivore46 is thirsty.
+
 Carnivore45 is thirsty.
+
 Carnivore46  is hungry.
 
 Omnivore49  is hungry.
@@ -635,105 +642,160 @@ Omnivore47  is hungry.
 
 
 Omnivore3 ha bebido
+
 Herbivore4  is hungry.
 
 Herbivore4 ha muerto por falta de comida.
+
 Herbivore4 ha bebido
+
 Omnivore6  is hungry.
 
 Omnivore6 ha muerto por falta de comida.
+
 Omnivore6 ha bebido
+
 Carnivore8  is hungry.
 
 Carnivore8 ha muerto por falta de comida.
+
 Carnivore8 ha bebido
+
 Carnivore10  is hungry.
 
 Carnivore10 ha muerto por falta de comida.
+
 Carnivore10 ha bebido
+
 Carnivore12  is hungry.
 
 Carnivore12 ha muerto por falta de comida.
+
 Carnivore12 ha bebido
+
 Carnivore14  is hungry.
 
 Carnivore14 ha muerto por falta de comida.
+
 Carnivore14 ha bebido
+
 Herbivore16  is hungry.
 
 Herbivore16 ha muerto por falta de comida.
+
 Herbivore16 ha bebido
+
 Carnivore18  is hungry.
 
 Carnivore18 ha muerto por falta de comida.
+
 Carnivore18 ha bebido
+
 Omnivore20  is hungry.
 
 Omnivore20 ha muerto por falta de comida.
+
 Omnivore20 ha bebido
+
 Carnivore22  is hungry.
 
 Carnivore22 ha muerto por falta de comida.
+
 Carnivore22 ha bebido
+
 Carnivore24  is hungry.
 
 Carnivore24 ha muerto por falta de comida.
+
 Carnivore24 ha bebido
+
 Carnivore26  is hungry.
 
 Carnivore26 ha muerto por falta de comida.
+
 Carnivore26 ha bebido
+
 Herbivore28  is hungry.
 
 Herbivore28 ha muerto por falta de comida.
+
 Herbivore28 ha bebido
+
 Omnivore30  is hungry.
 
 Omnivore30 ha muerto por falta de comida.
+
 Omnivore30 ha bebido
+
 Carnivore32  is hungry.
 
 Carnivore32 ha muerto por falta de comida.
+
 Carnivore32 ha bebido
+
 Herbivore34  is hungry.
 
 Herbivore34 ha muerto por falta de comida.
+
 Herbivore34 ha bebido
+
 Herbivore36  is hungry.
 
 Herbivore36 ha muerto por falta de comida.
+
 Herbivore36 ha bebido
+
 Omnivore38  is hungry.
 
 Omnivore38 ha muerto por falta de comida.
+
 Omnivore38 ha bebido
+
 Omnivore40  is hungry.
 
+
 Omnivore40 ha muerto por falta de comida.
+
 Omnivore40 ha bebido
+
 Herbivore42  is hungry.
 
 Herbivore42 ha muerto por falta de comida.
+
 Herbivore42 ha bebido
+
 Herbivore44  is hungry.
 
 Herbivore44 ha muerto por falta de comida.
+
 Herbivore44 ha bebido
+
 Carnivore46  is hungry.
 
 Carnivore46 ha muerto por falta de comida.
+
 Carnivore46 ha bebido
+
 Herbivore48  is hungry.
 
 Herbivore48 ha muerto por falta de comida.
+
 Herbivore48 ha bebido
+
 Animales en el arca: 27
+
 Comida restante en el arca: 0
+
 Agua restante en el arca: 41
+
 === FIN DE LA SIMULACIÓN DEL ARCA ===
+
 Animales en el arca: 27
+
 Comida restante en el arca: 0
+
 Agua restante en el arca: 41
+
 === SUPERVIVIENTES FINALES ===
 id: 5JCQ
 Name: Herbivore0
@@ -973,20 +1035,31 @@ Bear is not hungry.
 Bear se ha alimentado.
 Deer está satisfecho
 Tiger está satisfecho
+
 Bear está satisfecho
 
 --- Hidratando a los Animales ---
+
 Deer ha bebido
+
 Tiger no tiene sed
+
 Bear ha bebido
+
 Deer está hidratado
+
 Tiger está hidratado
+
 Bear está hidratado
 
 === ESTADO FINAL DEL ARCA 2 ===
+
 Animales en el arca: 3
+
 Comida restante en el arca: 2
+
 Agua restante en el arca: 498
+
 === FIN DE LA SIMULACIÓN DEL ARCA 2===
 .
 ----------------------------------------------------------------------
