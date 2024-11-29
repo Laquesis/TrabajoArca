@@ -74,6 +74,7 @@ En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizand
 Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instancia.
 
 # EXPLICACIÓN DEL PROYECTO
+
 ![ARCA NOE](arcanoe.jpeg)
 
 ## Desarrollo de Clases y Uso de la Librería de Test de Django
@@ -100,7 +101,11 @@ Ejecutamos las pruebas usando el comando:
   
    python manage.py test app_arca.tests.test_ark_integration
 
-Esto activa el sistema de testing de Django, que ejecuta todos los métodos definidos en nuestras clases de prueba y muestra los resultados.
+Esto activa el sistema de testing de Django, que ejecuta todos los métodos definidos en nuestras clases de prueba y muestra los resultados. La clase de prueba se usa para hacer una suerte 
+de simulador de las clases y que simula el funcionamiento del arca de noe.
+
+#### Resultado
+El resultado es una simulacion de como los animales van teniendo hambre y van consumiendo los recursos del arca(agua y comida) La simulación acaba cuando los animales, el agua o la comida se quedan a 0.
 
 # ENLACES DEL PROYECTO
 ## CLICK UP
