@@ -72,9 +72,35 @@ En este ejercicio, desarrollaremos un modelo de la famosa Arca de Noé utilizand
 13. Crea un método para mostrar el estado de todos los animales en el arca, incluyendo su nombre, tipo, hambre y sed.
 
 Este ejercicio te ayudará a comprender cómo usar la programación orientada a objetos para modelar un sistema más complejo, además de permitirte practicar la creación de jerarquías de clases y la interacción entre ellas. La inclusión de métodos estáticos también te dará experiencia en la implementación de funcionalidad que no depende del estado específico de una instancia.
+
 # EXPLICACIÓN DEL PROYECTO
 ![ARCA NOE](arcanoe.jpeg)
 
+## Desarrollo de Clases y Uso de la Librería de Test de Django
+
+En el marco de nuestro aprendizaje, hemos implementado clases de el arca de Noe.
+
+Para asegurarnos de que estas clases funcionan correctamente, hemos utilizado la librería de pruebas de Django, que nos permite automatizar y validar el comportamiento esperado de nuestras aplicaciones. Django ofrece un módulo integrado para pruebas llamado django.test, que simplifica el proceso de escribir y ejecutar tests.
+
+### Pasos que seguimos:
+Definición de las Clases:
+Las clases definidas son:
+![ESTRUCTURA](estructura.png)
+
+Configuración de las Pruebas: Utilizamos la funcionalidad de pruebas de Django para escribir un programa que verifica las clases implementadas.
+
+### Uso de TestCase:
+
+Django proporciona la clase TestCase como base para nuestras pruebas.
+Creamos métodos dentro de esta clase para escribir pruebas específicas.
+
+#### Ejecución de las Pruebas:
+
+Ejecutamos las pruebas usando el comando:
+  
+   python manage.py test app_arca.tests.test_ark_integration
+
+Esto activa el sistema de testing de Django, que ejecuta todos los métodos definidos en nuestras clases de prueba y muestra los resultados.
 
 # ENLACES DEL PROYECTO
 ## CLICK UP
