@@ -504,6 +504,8 @@ Comida restante en el arca: 0
 Agua restante en el arca: 41
 
 === SUPERVIVIENTES FINALES ===
+
+
 id: 5JCQ
 Name: Herbivore0
 Type: Herbivore
