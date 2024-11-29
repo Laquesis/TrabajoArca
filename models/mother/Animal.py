@@ -1,10 +1,13 @@
+
 import random
 import threading
+import shortuuid
 
-
+short_id = shortuuid.ShortUUID().random(length=4)
 class Animal:
     def __init__(self, name, animal_type=0, hunger=False, thirst=False, size=1, sentiment=0, sex=None):
-        # Validate type
+        # Validate type       
+        self.id= shortuuid.ShortUUID().random(length=4)
         if isinstance(animal_type, int) and animal_type in [0, 1, 2]:
             self.animal_type = animal_type
         else:
@@ -55,14 +58,21 @@ class Animal:
 
 
         self.is_alive = True
-        threading.Timer(30, self.set_hunger).start()
+        threading.Timer(30, self.set_hunger , args=(True,)).start()
         threading.Timer(30, self.set_thirst).start()
         threading.Timer(120, self.death).start()
 
+    #def __eq__(self, other):
+    #    if isinstance(other, Animal):  # Verifica que sea de la misma clase
+    #        return self.id == other.id  # Comparación basada en el atributo `id`
+    #    return False  # Si no es de la misma clase, no son iguales
+    def __eq__(self, other):
+        return isinstance(other, Animal) and self.id == other.id and self.name == other.name
 
     def __str__(self):
         # Provide string representation of the Animal object
         return (
+            f"id: {self.id}\n"
             f"Name: {self.name}\n"
             f"Type: {'Herbivore' if self.animal_type == 0 else 'Carnivore' if self.animal_type == 1 else 'Omnivore'}\n"
             f"Size: {self.size}\n"
@@ -88,9 +98,12 @@ class Animal:
            raise ValueError("Name must be a string")
         
         
-    def set_hunger(self):
-        self.hunger = True
-        print(f"{self.name} is hungry.\n")
+    def set_hunger(self,hambriento:bool):
+        self.hunger = hambriento
+        if hambriento==True:
+            print(f"{self.name}  is hungry.\n")
+        else:            
+            print(f"{self.name} is not hungry.\n")
 
 
     def set_thirst(self):
@@ -115,7 +128,8 @@ class Animal:
    
 
     def death(self):
-        self.is_alive = False
+        from app_arca.models.mother.Ark import Ark
+        self.is_alive = False              
 
     
     def get_sentiment(self):
@@ -144,7 +158,7 @@ class Animal:
             print(f"{self.name} has been fed.")
         else:
             print(f"{self.name} is not hungry.")
-        threading.Timer(5, self.set_hunger).start()
+        threading.Timer(5, self.set_hunger, args=(True,)).start()
 
     def water(self):
         if self.is_alive == False:
@@ -198,5 +212,3 @@ class Animal:
         if (self.name == animal.name) and (self. sex != animal.sex) :
             baby_animal = Animal(self.name , animal_type= self.animal_type , sex = random.randint(0,1), hunger= True , thirst= True)
             return baby_animal
-
-

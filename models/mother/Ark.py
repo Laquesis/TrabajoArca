@@ -1,9 +1,11 @@
-from mother.Animal import Animal
-from mother.Food import Food
+#from Animal import Animal
+#from Food import Food
+
 class Ark:
     def __init__(self, animals=None, foods=None, water=None, max_capacity=None, left=False, tiempo=None):
+        from app_arca.models.mother.Animal import Animal
+        from app_arca.models.mother.Food import Food
         try:
-            # Inicializar listas si no se pasan como argumentos
             if animals is None:
                 animals = []
             if foods is None:
@@ -11,11 +13,10 @@ class Ark:
             if water is None:
                 water = 0
             if tiempo is None:
-                tiempo=0
+                tiempo = 0
             if max_capacity is None:
                 max_capacity = {"animal": 100, "food": 1000, "water": 10000}
 
-            # Verificación de tipos de datos
             if not isinstance(animals, list):
                 raise TypeError("El atributo 'animals' debe ser una lista.")
             if not all(isinstance(animal, Animal) for animal in animals):
@@ -34,30 +35,29 @@ class Ark:
             if not isinstance(left, bool):
                 raise TypeError("El atributo 'left' debe ser un valor booleano.")
             
-
-            # Asignación a los atributos de la clase
             self.animals = animals
             self.foods = foods
             self.water = water
             self.max_capacity = max_capacity
             self.left = left
-            self.tiempo=tiempo
+            self.tiempo = tiempo
         except TypeError as e:
             print(f"Error en la inicialización de Ark: {e}")
+  
 
     def left_ark(self):
         try:            
-            if self.left==False:
-                self.left=True
-                self.tiempo +=1         
+            if self.left == False:
+                self.left = True
+                self.tiempo += 1         
         except TypeError as e:
             print(f"Error en left_ark: {e}")
 
     def add_animal(self, animal):
-        """Agregar un animal si hay capacidad disponible."""
+        from app_arca.models.mother.Animal import Animal
         try:
             if len(self.animals) < self.max_capacity["animal"] and not self.left:
-                self.animals.append(Animal(animal))
+                self.animals.append(animal)
             else:
                 print("No se pueden añadir más animales.")
         except KeyError as e:
@@ -66,10 +66,9 @@ class Ark:
             print(f"Error en add_animal: {e}")
 
     def add_food(self, food):
-        """Agregar comida si hay capacidad disponible."""
         try:
             if len(self.foods) < self.max_capacity["food"]:
-                self.foods.append(Food(food))
+                self.foods.append(food)
             else:
                 print("No se puede añadir más comida.")
         except KeyError as e:
@@ -78,7 +77,6 @@ class Ark:
             print(f"Error en add_food: {e}")
 
     def add_water(self, water):
-        """Agregar agua si hay capacidad disponible."""
         try:
             if not isinstance(water, int):
                 raise TypeError("El parámetro 'water' debe ser un número entero.")
@@ -92,9 +90,9 @@ class Ark:
             print(f"Error en add_water: {e}")
 
     def add_multi_animal(self, list_animal):
-        """Agregar múltiples animales si hay capacidad disponible."""
+        from app_arca.models.mother.Animal import Animal
         try:
-            if all(isinstance(animal, Animal) for animal in list_animal):
+            if not all(isinstance(animal, Animal) for animal in list_animal):
                 raise TypeError("Todos los elementos de 'list_animal' deben ser instancias de la clase Animal.")
             if len(self.animals) + len(list_animal) <= self.max_capacity["animal"] and not self.left:
                 self.animals.extend(list_animal)
@@ -106,12 +104,12 @@ class Ark:
             print(f"Error en add_multi_animal: {e}")
 
     def add_multi_food(self, list_food):
-        """Agregar múltiples alimentos si hay capacidad disponible."""
+        from app_arca.models.mother.Food import Food
         try:            
-            if all(isinstance(food, Food) for food in list_food):
+            if not all(isinstance(food, Food) for food in list_food):
                 raise TypeError("Todos los elementos de 'list_food' deben ser instancias de la clase Food.")
-            if len(self.food) + len(list_food) <= self.max_capacity["food"]:
-                self.food.extend(list_food)
+            if len(self.foods) + len(list_food) <= self.max_capacity["food"]:
+                self.foods.extend(list_food)
             else:
                 print("No se puede añadir más comida.")
         except KeyError as e:
@@ -120,7 +118,6 @@ class Ark:
             print(f"Error en add_multi_food: {e}")
 
     def get_status(self):
-        """Mostrar el estado actual de la capacidad."""
         return {
             "animals": len(self.animals),
             "food": len(self.foods),
@@ -130,59 +127,105 @@ class Ark:
         }
 
     def search_list_suitable_food(food, animal_type):
+        from app_arca.models.mother.Food import Food
         if not isinstance(food, Food):
             raise TypeError("El parámetro 'food' debe ser de la clase Food.")
 
-        # Diccionario que asigna funciones lambda de validación según el tipo de animal
         is_suitable = {
-            0: lambda f: f.tipo == 0,    # Herbívoro: solo acepta vegetal (tipo 0)
-            1: lambda f: f.tipo == 1,    # Carnívoro: solo acepta carne (tipo 1)
-            2: lambda _: True            # Omnívoro: acepta cualquier tipo de alimento
+            0: lambda f: f.tipo == 0,    
+            1: lambda f: f.tipo == 1,    
+            2: lambda _: True            
         }
 
-        # Retorna True o False según si el alimento es adecuado
         return is_suitable.get(animal_type, lambda _: False)(food)
         
-    def alimentar(self,animal):    
+    def alimentar(self, animal):  
+        from app_arca.models.mother.Animal import Animal
+        from app_arca.models.mother.Food import Food 
+   
+        if not isinstance(animal, Animal):
+            raise ValueError("El parámetro 'animal' debe ser una instancia válida de Animal.")
+        
+
         if not animal.hunger:
-            return self.foods  # Si el animal no tiene hambre, no consume nada
-        if len(self.foods)<=0: # La lista no puede estar vacía           
-            return self.foods
+            return None
+
+        if len(self.foods) == 0:
+            animal.set_hunger(True)
+            animal.death()   
+            animal.is_alive=False         
+            #print(len(self.animals))                     
+            print(f"{animal.name} ha muerto por falta de comida.")
+            self.eliminarMuertos()
+            return None
 
         calorias_necesarias = animal.size
-        suitable_foods = [food for food in self.foods if Ark.search_list_suitable_food(food,Animal(animal).tipo)]
-
-        for food in suitable_foods:
+        suitable_foods = [
+            food for food in self.foods 
+            if Ark.search_list_suitable_food(food, animal.animal_type)
+        ]
+        
+        for food in suitable_foods[:]:
+            #print(food)
             if calorias_necesarias <= 0:
-                break  # Se ha satisfecho la necesidad calórica
+                break
             if food.calorias <= calorias_necesarias:
-                # Consume todo el alimento y resta sus calorías de la necesidad
-                calorias_necesarias -= food.calorias
-                self.foods.remove(food)
+                calorias_necesarias -= food.calorias              
+                print(len(self.foods))                
+                idFoodEliminar=food.id
+                # Buscar el objeto con el ID coincidente
+                self.foods = [food_ for food_ in self.foods if food.id != idFoodEliminar]               
             else:
-                # Consume solo una parte de las calorías del alimento y actualiza el alimento
                 food.calorias -= calorias_necesarias
-                calorias_necesarias = 0  # Se satisface la necesidad calórica
-        
-        if calorias_necesarias > 0:
-            Animal(animal).hunger=True
-            Animal(animal).is_alive=False          
-        else:
-            Animal(animal).hunger=False
-        
-        self.tiempo+=1
+                calorias_necesarias = 0
 
-        if self.tiempo==5:
-            Food.eliminar_caducados()
-            self.tiempo=0      
-  
-    def dar_agua(self,animal):
-        if Animal(animal).thirst==True and self.water >(Animal(animal).size):
-            self.water-=(Animal(animal).size)
-            Animal(animal).thirst==False       
+        if calorias_necesarias > 0:
+            animal.set_hunger(True)
+            animal.death()   
+            animal.is_alive=False         
+            #print(len(self.animals))                     
+            print(f"{animal.name} ha muerto por falta de comida.")
         else:
-            self.water=0
-            Animal(animal).thirst=True
-            Animal(animal).is_alive=False
-    
-  
+            animal.set_hunger(False)
+            print(f"{animal.name} se ha alimentado.")
+
+        self.tiempo += 1
+        if self.tiempo == 5:
+            for alimento in self.foods:
+                alimento.caducar()  
+            self.tiempo = 0
+   
+
+
+    def caducar(self):  
+        from app_arca.models.mother.Food import Food
+        # Restar 1 a la caducidad de cada alimento en self.Ark.foods
+        for food in self.foods:
+            food.caducidad -= 1  
+        
+
+    def dar_agua(self, animal):
+        if animal.thirst == True and self.water>=1:
+            self.water -= 1
+            animal.thirst = False 
+            animal.is_alive=True  
+            print(f"{animal.name} ha bebido")    
+        elif animal.thirst == False: 
+            print(f"{animal.name} no tiene sed") 
+        elif animal.thirst == True and self.water==0:           
+            animal.thirst = True
+            animal.is_alive = False   
+            animal.death()         
+            print(f"{animal.name} ha muerto por falta de agua")
+
+    def eliminarMuertos(self):
+        from app_arca.models.mother.Animal import Animal
+        for animal in self.animals:
+            if animal.is_alive==False:
+                self.animals.remove(animal)
+
+    def eliminarCaducados(self):
+        from app_arca.models.mother.Food import Food
+        for food in self.foods:
+            if food.caducidad==0:
+                self.foods.remove(food)
